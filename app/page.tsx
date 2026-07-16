@@ -3,9 +3,12 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="container">
-      <div className="header">
-        <Image src="/logo.svg" alt="Codédex Logo" width={64} height={64} />
-        <h1>Codédex Webring</h1>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '15px' }}>
+        <div className="header" style={{ marginBottom: '5px' }}>
+          <Image src="/logo.svg" alt="Codédex Logo" width={48} height={48} />
+          <h1>Codédex</h1>
+        </div>
+        <div className="header-subtitle">welcome to the curiosity webring</div>
       </div>
       
       <div className="subtitle">
