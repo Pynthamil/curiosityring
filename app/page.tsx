@@ -31,9 +31,9 @@ export default function Home() {
       <div className="nav-links">
         <p style={{ margin: 0 }}>here, try it yourself (you'll find something similar on each site):</p>
         <div style={{ marginTop: '12px', textAlign: 'center' }}>
-          <a href="#">&larr; prev</a> 
-          <a href="#">random</a> 
-          <a href="#">next &rarr;</a>
+          <a href="/api/redirect?action=prev&id=pynthamil">&larr; prev</a> 
+          <a href="/api/redirect?action=random">random</a> 
+          <a href="/api/redirect?action=next&id=pynthamil">next &rarr;</a>
         </div>
       </div>
 
