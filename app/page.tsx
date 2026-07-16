@@ -28,10 +28,12 @@ export default function Home() {
       </p>
       
       <div className="nav-links">
-        here, try it yourself (you'll find something similar on each site): 
-        <a href="#">&larr; prev</a> 
-        <a href="#">&#9860; random</a> 
-        <a href="#">next &rarr;</a>
+        <p style={{ margin: 0 }}>here, try it yourself (you'll find something similar on each site):</p>
+        <div style={{ marginTop: '12px', textAlign: 'center' }}>
+          <a href="#">&larr; prev</a> 
+          <a href="#">random</a> 
+          <a href="#">next &rarr;</a>
+        </div>
       </div>
 
       <h2>members</h2>
