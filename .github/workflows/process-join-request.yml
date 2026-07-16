@@ -1,7 +1,7 @@
 name: Process Join Request
 on:
   issues:
-    types: [opened]
+    types: [opened, edited]
 
 permissions:
   contents: write
@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   process:
-    if: contains(github.event.issue.labels.*.name, 'join-request')
+    if: startsWith(github.event.issue.title, '[Join]:')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
