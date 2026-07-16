@@ -17,7 +17,7 @@ export default function Home() {
       </div>
 
       <div style={{ margin: '3rem 0 2rem 0', display: 'flex', justifyContent: 'center' }}>
-        <Image src="/Keyboard.svg" alt="Keyboard illustration" width={900} height={281} />
+        <Image src="/Keyboard.svg" alt="Keyboard illustration" width={900} height={281} style={{ maxWidth: '100%', height: 'auto' }} />
       </div>
 
       <h2>webring</h2>
