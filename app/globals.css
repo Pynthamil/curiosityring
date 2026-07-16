@@ -1,26 +1,171 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --bg-color: #F0EBE1; /* A sophisticated warm off-white */
+  --text-main: #222222;
+  --text-muted: #555555;
+  --link-color: #5A7184; /* Muted Slate Blue */
+  --border-color: #D1CEC7;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.5;
 }
+
+.container {
+  max-width: 650px;
+  margin: 60px auto;
+  padding: 0 30px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.subtitle a {
+  color: var(--link-color);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 30px 0;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.nav-links {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.nav-links a {
+  color: var(--link-color);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  margin: 0 8px;
+  font-weight: 500;
+}
+.nav-links a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px 20px;
+  margin-top: 30px;
+}
+
+.member-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-name-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.member-name {
+  color: var(--link-color);
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: none;
+}
+
+.member-name:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.external-icon {
+  width: 14px;
+  height: 14px;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.member-name:hover + .external-icon {
+  opacity: 1;
+}
+
+/* Keyboard Aesthetic */
+kbd {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  background: linear-gradient(180deg, #F8F7F3 0%, #EAE6D8 100%);
+  border: 1px solid #D5CFC9;
+  border-bottom: 4px solid #D5CFC9;
+  border-radius: 6px;
+  box-shadow: 
+    0 4px 6px rgba(0,0,0,0.05),
+    inset 0 1px 1px rgba(255,255,255,0.8);
+  margin: 0 0.3rem;
+  text-transform: uppercase;
+  transition: all 0.1s ease;
+  cursor: default;
+}
+
+kbd:active, kbd:hover {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+  margin-bottom: 2px;
+  background: linear-gradient(180deg, #EAE6D8 0%, #F8F7F3 100%);
+}
+
+.member-url {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 2px 0;
+}
+
+

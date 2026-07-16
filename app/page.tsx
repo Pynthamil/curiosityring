@@ -2,64 +2,53 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="container">
+      <div className="header">
+        <Image src="/logo.svg" alt="Codédex Logo" width={64} height={64} />
+        <h1>Codédex Webring</h1>
+      </div>
+      
+      <div className="subtitle">
+        a community of builders at <a href="#">Codédex</a>.
+      </div>
+
+      <div style={{ margin: '3rem 0 2rem 0', display: 'flex', justifyContent: 'center' }}>
+        <Image src="/Keyboard.svg" alt="Keyboard illustration" width={900} height={281} />
+      </div>
+
+      <h2>webring</h2>
+      <p>
+        This is a webring for the curious people of Codédex—those who love learning, building, and turning ideas into something real through the magic of code.
+      </p>
+      <p>
+        Whether you&apos;re writing your first line of code, shipping your hundredth project, or exploring a new technology just because it looked interesting, this ring is for you. It&apos;s a place to discover fellow builders, explore personal websites, share projects, and celebrate the joy of creating.
+      </p>
+      
+      <div className="nav-links">
+        here, try it yourself (you'll find something similar on each site): 
+        <a href="#">&larr; prev</a> 
+        <a href="#">&#9860; random</a> 
+        <a href="#">next &rarr;</a>
+      </div>
+
+      <h2>members</h2>
+      
+      <div className="members-grid">
+        <div className="member-card">
+          <div className="member-info">
+            <div className="member-name-container">
+              <a href="https://ctfp1.vercel.app" target="_blank" rel="noopener noreferrer" className="member-name">pynthamil</a>
+              <svg className="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </div>
+            <div className="member-url">ctfp1.vercel.app</div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
+
+      <h2>join</h2>
+      <p>
+        want to join the webring? just open a pull request on our <a href="https://github.com/Pynthamil/curiosityring" target="_blank" rel="noopener noreferrer">github repository</a> with your website details. once merged, you'll be officially part of the ring!
+      </p>
     </div>
   );
 }
