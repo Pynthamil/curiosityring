@@ -1,4 +1,5 @@
 import Image from "next/image";
+import members from "../data/members.json";
 
 export default function Home() {
   return (
@@ -39,15 +40,17 @@ export default function Home() {
       <h2>members</h2>
       
       <div className="members-grid">
-        <div className="member-card">
-          <div className="member-info">
-            <div className="member-name-container">
-              <a href="https://ctfp1.vercel.app" target="_blank" rel="noopener noreferrer" className="member-name">pynthamil</a>
-              <svg className="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        {members.map((member) => (
+          <div className="member-card" key={member.id}>
+            <div className="member-info">
+              <div className="member-name-container">
+                <a href={member.url} target="_blank" rel="noopener noreferrer" className="member-name">{member.name}</a>
+                <svg className="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </div>
+              <div className="member-url">{member.url.replace(/^https?:\/\//, '')}</div>
             </div>
-            <div className="member-url">ctfp1.vercel.app</div>
           </div>
-        </div>
+        ))}
       </div>
 
       <h2>join</h2>
