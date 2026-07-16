@@ -29,6 +29,8 @@ export const metadata: Metadata = {
   description: "A webring for the curious people of Codédex to discover fellow builders and explore personal websites.",
 };
 
+import { Analytics } from "@vercel/analytics/react";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,6 +43,7 @@ export default function RootLayout({
     >
       <body>
         {children}
+        <Analytics />
       </body>
     </html>
   );
