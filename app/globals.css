@@ -20,8 +20,8 @@ a, button, [role="button"] {
   cursor: url('/Grab.svg') 24 24, pointer;
 }
 
-a:active, button:active, [role="button"]:active {
-  cursor: url('/Grabbed.svg') 24 24, pointer;
+body:active, *:active {
+  cursor: url('/Grabbed.svg') 24 24, pointer !important;
 }
 
 .container {
