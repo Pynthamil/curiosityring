@@ -55,7 +55,7 @@ export default function Home() {
 
       <h2>join</h2>
       <p>
-        want to join the webring? just open a pull request on our <a href="https://github.com/Pynthamil/curiosityring" target="_blank" rel="noopener noreferrer">github repository</a> with your website details. once merged, you'll be officially part of the ring!
+        want to join the webring? just open a <strong>Join the Webring</strong> issue on our <a href="https://github.com/Pynthamil/curiosityring/issues/new/choose" target="_blank" rel="noopener noreferrer">github repository</a>. our automated bot will handle the rest!
       </p>
     </div>
   );

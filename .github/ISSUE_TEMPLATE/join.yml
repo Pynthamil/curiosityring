@@ -1,0 +1,32 @@
+name: Join the Webring
+description: Submit your website to automatically join the curiosity webring!
+title: "[Join]: <Your Name>"
+labels: ["join-request"]
+body:
+  - type: markdown
+    attributes:
+      value: "Welcome! Please fill out this form to add your site to the webring. Once you submit, our automation will open a Pull Request to add you."
+  - type: input
+    id: id
+    attributes:
+      label: ID
+      description: A unique identifier for yourself (e.g., your GitHub username, no spaces).
+      placeholder: e.g., coolbuilder99
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Display Name
+      description: How you want to be known on the webring.
+      placeholder: e.g., Cool Builder
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Website URL
+      description: The full URL to your website (must start with http:// or https://).
+      placeholder: e.g., https://mycoolsite.com
+    validations:
+      required: true

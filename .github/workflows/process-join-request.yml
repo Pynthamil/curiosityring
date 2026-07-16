@@ -1,0 +1,36 @@
+name: Process Join Request
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  process:
+    if: contains(github.event.issue.labels.*.name, 'join-request')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Process Issue
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: node .github/scripts/process-issue.mjs
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Add ${{ env.NEW_MEMBER_NAME }} to webring"
+          title: "Add ${{ env.NEW_MEMBER_NAME }} to webring"
+          body: "Closes #${{ github.event.issue.number }}\n\nAutomated PR to add a new member submitted by @${{ github.event.issue.user.login }}."
+          branch: "join-${{ env.NEW_MEMBER_ID }}"
+          base: "main"
